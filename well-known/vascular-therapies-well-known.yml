@@ -1,0 +1,77 @@
+generated: '2026-09-02'
+method: probed
+source: >-
+  Direct HTTP probes of the company's own domain (vasculartx.com apex and www),
+  run 2026-09-02. No API host or developer host exists for this company, so the
+  company web domain was the only host available to probe.
+name: Vascular Therapies Well-Known Documents
+description: >-
+  Probe record for the RFC 8615 /.well-known/ namespace on Vascular Therapies'
+  own domain. Every named path missed. The apex (vasculartx.com) answers 403
+  from the Webflow shared proxy for every path including the site root, and the
+  www host answers Webflow's unpublished-domain 404 catch-all for every path
+  including the site root — so neither host is serving the company website at
+  all, let alone a well-known document. Recorded as an absence. NO WellKnown or
+  SecurityTxt pointer is emitted in apis.yml, because nothing returned a real
+  document.
+hosts:
+  - host: vasculartx.com
+    note: >-
+      Apex is CNAMEd to proxy-ssl.webflow.com. Every request, including GET /,
+      returns an nginx 403 Forbidden (552 bytes) from
+      X-Cluster-Name us-east-1-prod-hosting-red. This is a Webflow
+      custom-domain-not-connected response, not a bot challenge, and not a
+      well-known policy.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 403
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+  - host: www.vasculartx.com
+    note: >-
+      Cloudflare-fronted Webflow origin (x-wf-region us-east-1). GET / returns
+      HTTP 404 with Webflow's "404 - Page not found" catch-all, as do /about,
+      /news and /robots.txt — pages that search engines still index. The site is
+      unpublished at the host, so no well-known document can be served.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+summary:
+  hosts_probed: 2
+  paths_probed: 11
+  documents_found: 0
+  security_txt: false
+  api_catalog: false
+  agent_card: false
+  pointer_emitted: false
+  pointer_note: >-
+    No document returned a 200 carrying real content, so per the pipeline
+    contract no WellKnown / SecurityTxt / AgentCard pointer is wired into
+    apis.yml. This file records a verified absence, not a presence.

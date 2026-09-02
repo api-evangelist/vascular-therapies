@@ -1,23 +1,87 @@
 aid: vascular-therapies
 name: Vascular Therapies
-description: 'Vascular Therapies is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Vascular Therapies, Inc. is a privately held, clinical-stage biopharmaceutical
+  company headquartered in Cresskill, New Jersey, developing Sirogen, a
+  proprietary sirolimus formulation delivered from a bioabsorbable collagen
+  implant placed perivascularly at the time of surgery. The product is aimed at
+  reducing surgical stenosis and improving arteriovenous fistula maturation and
+  patency in end-stage renal disease patients who need hemodialysis vascular
+  access. Sirolimus for dialysis vascular access carries FDA Fast Track status
+  and Orphan Drug designation in both the United States and the European Union.
+  The company ran the Phase 3 ACCESS trial (243 ESRD patients across 20 US
+  sites) and the multinational Phase 3 ACCESS 2 trial, whose topline results
+  presented in April 2025 did not meet the primary clinical fistula maturation
+  endpoint. Vascular Therapies is a therapeutics developer, not a software
+  company: it ships a drug-device combination product through clinical trials
+  and regulatory review, and publishes no API, SDK, developer portal or
+  machine-readable contract of any kind.
 url: https://raw.githubusercontent.com/api-evangelist/vascular-therapies/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
 x-tier-reason: harvest
+x-company-domain: vasculartx.com
+x-company-domain-status: >-
+  Offline as of 2026-09-02. www.vasculartx.com returns Webflow's
+  unpublished-domain "404 - Page not found" catch-all for the site root and for
+  every indexed path (/about, /news, /robots.txt); the apex vasculartx.com is
+  CNAMEd to proxy-ssl.webflow.com and returns nginx 403 Forbidden for every
+  path. Not wired as a Website pointer because a confirmed dead page is a false
+  claim, not a web presence.
+x-harvest-source-listing: >-
+  https://forgeglobal.com/vascular-therapies_stock/ — the secondary-market
+  listing this company was harvested from. Deliberately NOT wired as
+  type Website: a trading-venue listing page is not the company's own web
+  presence, and crediting it as one is the roadmap#56 false-credit defect.
 specificationVersion: '0.20'
 created: '2026-09-02'
 modified: '2026-09-02'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Medical Devices
+- Drug Delivery
+- Clinical Trials
+- Nephrology
+- Healthcare
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-common:
-- type: Website
-  url: https://forgeglobal.com/vascular-therapies_stock/
+common: []
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Vascular Therapies is a clinical-stage biopharma developing Sirogen, a
+    sirolimus-eluting collagen implant for hemodialysis vascular access — there
+    is no software product to expose an API for, and its own web presence is
+    additionally offline, with www.vasculartx.com returning Webflow's
+    unpublished-domain 404 catch-all on the site root and on every indexed path.
+  evidence:
+    - url: https://www.vasculartx.com/
+      status: 404
+    - url: https://www.vasculartx.com/news
+      status: 404
+    - url: https://vasculartx.com/
+      status: 403
+    - url: https://vasculartx.com/openapi.json
+      status: 403
+    - url: https://vasculartx.com/.well-known/agent-card.json
+      status: 403
+    - url: https://api.vasculartx.com/
+      status: 0
+    - url: https://developer.vasculartx.com/
+      status: 0
+    - url: https://github.com/vasculartx
+      status: 404
+  checked: '2026-09-02'

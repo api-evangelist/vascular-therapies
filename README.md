@@ -64,5 +64,33 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Vascular Therapies is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/vascular-therapies_stock/
+Vascular Therapies, Inc. is a privately held, clinical-stage biopharmaceutical company in Cresskill,
+New Jersey, developing **Sirogen** — a proprietary sirolimus formulation delivered from a
+bioabsorbable collagen implant placed perivascularly at the time of surgery, intended to reduce
+surgical stenosis and improve arteriovenous fistula maturation and patency for end-stage renal
+disease patients needing hemodialysis vascular access. Sirolimus for dialysis vascular access holds
+FDA Fast Track status and Orphan Drug designation in the US and the EU. The company ran the Phase 3
+ACCESS trial (243 ESRD patients, 20 US sites) and the multinational Phase 3 ACCESS 2 trial, whose
+topline results presented in April 2025 did not meet the primary clinical fistula maturation
+endpoint.
+
+## No API surface
+
+Vascular Therapies is a therapeutics developer, not a software company. It publishes no API, SDK,
+webhooks, developer portal, or machine-readable contract, and the full contract-discovery pass on
+2026-09-02 (OpenAPI/Swagger paths, `/.well-known/` namespace, GraphQL, MCP, A2A agent card, and
+`api.`/`developer.` subdomains) returned nothing on any host.
+
+Its own web presence is additionally offline: `www.vasculartx.com` returns Webflow's
+unpublished-domain "404 - Page not found" catch-all on the site root and on every still-indexed path
+(`/about`, `/news`), and the apex `vasculartx.com` is CNAMEd to `proxy-ssl.webflow.com` and returns
+`403 Forbidden` for every path. Because a confirmed-dead page is a false claim rather than a web
+presence, no `Website` pointer is wired in `apis.yml`.
+
+This company was surfaced via the API Evangelist harvest backlog from the secondary-market listing
+at `https://forgeglobal.com/vascular-therapies_stock/`. That is a trading-venue page, not the
+company's own site, so it is recorded under `x-harvest-source-listing` and deliberately **not**
+wired as a `Website` pointer.
+
+See `x-coverage` in [`apis.yml`](apis.yml) and the probe record in
+[`well-known/vascular-therapies-well-known.yml`](well-known/vascular-therapies-well-known.yml).

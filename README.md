@@ -64,33 +64,28 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Vascular Therapies, Inc. is a privately held, clinical-stage biopharmaceutical company in Cresskill,
-New Jersey, developing **Sirogen** — a proprietary sirolimus formulation delivered from a
-bioabsorbable collagen implant placed perivascularly at the time of surgery, intended to reduce
-surgical stenosis and improve arteriovenous fistula maturation and patency for end-stage renal
-disease patients needing hemodialysis vascular access. Sirolimus for dialysis vascular access holds
-FDA Fast Track status and Orphan Drug designation in the US and the EU. The company ran the Phase 3
-ACCESS trial (243 ESRD patients, 20 US sites) and the multinational Phase 3 ACCESS 2 trial, whose
-topline results presented in April 2025 did not meet the primary clinical fistula maturation
-endpoint.
+Vascular Therapies, Inc. is a privately held, clinical-stage biopharmaceutical company headquartered in Cresskill, New Jersey, developing Sirogen, a proprietary sirolimus formulation delivered from a bioabsorbable collagen implant placed perivascularly at the time of surgery. The product is aimed at reducing surgical stenosis and improving arteriovenous fistula maturation and patency in end-stage renal disease patients who need hemodialysis vascular access. Sirolimus for dialysis vascular access carries FDA Fast Track status and Orphan Drug designation in both the United States and the European Union. The company ran the Phase 3 ACCESS trial (243 ESRD patients across 20 US sites) and the multinational Phase 3 ACCESS 2 trial, whose topline results presented in April 2025 did not meet the primary clinical fistula maturation endpoint. Vascular Therapies is a therapeutics developer, not a software company: it ships a drug-device combination product through clinical trials and regulatory review, and publishes no API, SDK, developer portal or machine-readable contract of any kind.
 
-## No API surface
+**Areas:** Company · Biotechnology · Pharmaceuticals · Medical Devices · Drug Delivery · Clinical Trials · Nephrology · Healthcare
 
-Vascular Therapies is a therapeutics developer, not a software company. It publishes no API, SDK,
-webhooks, developer portal, or machine-readable contract, and the full contract-discovery pass on
-2026-09-02 (OpenAPI/Swagger paths, `/.well-known/` namespace, GraphQL, MCP, A2A agent card, and
-`api.`/`developer.` subdomains) returned nothing on any host.
+## Vascular Therapies on APIs.io
 
-Its own web presence is additionally offline: `www.vasculartx.com` returns Webflow's
-unpublished-domain "404 - Page not found" catch-all on the site root and on every still-indexed path
-(`/about`, `/news`), and the apex `vasculartx.com` is CNAMEd to `proxy-ssl.webflow.com` and returns
-`403 Forbidden` for every path. Because a confirmed-dead page is a false claim rather than a web
-presence, no `Website` pointer is wired in `apis.yml`.
+Everything profiled for Vascular Therapies is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/vascular-therapies/](https://apis.io/providers/vascular-therapies/)** — or go straight to one of the APIs or properties below.
 
-This company was surfaced via the API Evangelist harvest backlog from the secondary-market listing
-at `https://forgeglobal.com/vascular-therapies_stock/`. That is a trading-venue page, not the
-company's own site, so it is recorded under `x-harvest-source-listing` and deliberately **not**
-wired as a `Website` pointer.
+## API Evangelist rating
 
-See `x-coverage` in [`apis.yml`](apis.yml) and the probe record in
-[`well-known/vascular-therapies-well-known.yml`](well-known/vascular-therapies-well-known.yml).
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Vascular Therapies: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/vascular-therapies/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
